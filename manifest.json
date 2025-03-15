@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Instagram Image Downloader",
+  "version": "1.0",
+  "description": "Download Instagram images",
+  "icons": {
+    "48": "images/icon.png"
+  },
+  "permissions": ["downloads"],
+  "host_permissions": ["https://www.instagram.com/*"],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "images/*.png"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://www.instagram.com/*"],
+      "js": ["downloader.js"]
+    }
+  ]
+}
